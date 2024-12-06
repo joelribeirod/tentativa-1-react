@@ -13,8 +13,8 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/tentativa-1-react/" element={<Home />}/>
-          <Route path="/tentativa-1-react/sobre" element={<Sobre />}/>
+          <Route path="/" element={<Home />}/>
+          <Route path="/sobre" element={<Sobre />}/>
         </Routes>
         <Footer />
       </BrowserRouter>
