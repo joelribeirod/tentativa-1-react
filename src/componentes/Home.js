@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useRef, useState} from 'react'
 
 import NeutralA0000 from '../imagens/NeutralA0000.jpg'
 import tempo from '../imagens/tempo.jpg'
@@ -7,14 +7,48 @@ import jetso from '../imagens/jetso.jpg'
 
 function Home(){
     const [image, setImage] = useState(null)
+    const boxRef = useRef({})
+
     const images = [
-        {id: 1, src: tempo, alt: "imagem 1", desc: "O jogo possui um sistema discreto de climas, que muda com o proprio tempo do mundo. E em vários casos, cada mapa possui um clima mais proprício para acontecer"},
-        {id: 2, src: dois13, alt: "imagem 2", desc: "Cada raça no jogo tem um Quartel General, onde todos os players começam no jogo, e duas aréas auxiliares"},
-        {id: 3, src: jetso, alt: "imagem 3", desc: "Existem mapas mais hardcore que outros, onde possuem seus proprios bosses e monstros de nivel elevado, onde para caçar, o ideal é ter um grupo"}
+        {id: 1, idC: 'caixa1', src: tempo, alt: "imagem 1", desc: "O jogo possui um sistema discreto de climas, que muda com o proprio tempo do mundo. E em vários casos, cada mapa possui um clima mais proprício para acontecer"},
+        {id: 2, idC: 'caixa2', src: dois13, alt: "imagem 2", desc: "Cada raça no jogo tem um Quartel General, onde todos os players começam no jogo, e duas aréas auxiliares"},
+        {id: 3, idC: 'caixa3', src: jetso, alt: "imagem 3", desc: "Cada raça no jogo tem um Quartel General, onde todos os players começam no jogo, e duas aréas auxiliares"}
     ]
 
-    const clicou = (imagem) => {
-        setImage(imagem)
+    const clicou = (e) => { 
+        const caixaclicada = boxRef.current[e.id]
+        caixaclicada.style.zIndex = 1
+        caixaclicada.style.position = 'relative'
+
+        if (window.innerWidth <= 768) {
+            boxRef.current[1].style.transform = 'translateY(300px)';
+            boxRef.current[3].style.transform = 'translateY(-300px)';
+        } else if ( window.innerWidth <= 992){
+            boxRef.current[1].style.transform = 'translateX(280px)';
+            boxRef.current[3].style.transform = 'translateX(-280px)';
+        }else {
+            boxRef.current[1].style.transform = 'translateX(330px)';
+            boxRef.current[3].style.transform = 'translateX(-330px)';
+        }
+        
+        console.log(caixaclicada)
+        console.log(boxRef)
+
+        function mostrar(){setImage(e)}
+
+        function aumentar(){
+            
+
+            if(window.innerWidth <= 768){
+                setTimeout(mostrar, 300)
+            }else{
+                caixaclicada.style.width = '520px'
+                setTimeout(mostrar, 420)
+            }
+            
+        }
+        setTimeout(aumentar, 100)
+         
     }
 
     const desclicou = () => {
@@ -58,14 +92,16 @@ function Home(){
                                 key={image.id}
                                 src={image.src}
                                 alt={image.alt}
-                                onClick={() => clicou(image)}
+                                ref={(el) => (boxRef.current[image.id] = el)}
+                                onClick={() => (clicou(image))}
                                 />
+                                
                             ))}
                         
                         </div>
                         <p id='view'>Clique em uma imagem para vizualiza-la</p>
                     </div>
-                ): (
+                ) : (
                     <div id='unic'>
                         <div>
                             <img src={image.src} alt={image.alt} />
