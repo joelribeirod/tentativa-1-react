@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/tentativa-1-react/static/css/main.b710dd3d.css",
-    "main.js": "/tentativa-1-react/static/js/main.de7c14fb.js",
+    "main.css": "/tentativa-1-react/static/css/main.e51818eb.css",
+    "main.js": "/tentativa-1-react/static/js/main.4b736bdc.js",
     "static/js/453.60932868.chunk.js": "/tentativa-1-react/static/js/453.60932868.chunk.js",
     "static/media/NeutralA0000.jpg": "/tentativa-1-react/static/media/NeutralA0000.6bdfbce34d612242a4b5.jpg",
     "static/media/dois13.jpg": "/tentativa-1-react/static/media/dois13.48c7e5ac3c2d133ccd27.jpg",
@@ -9,12 +9,12 @@
     "static/media/Meuchar.jpeg": "/tentativa-1-react/static/media/Meuchar.722f2f7609c5ceeae496.jpeg",
     "static/media/tempo.jpg": "/tentativa-1-react/static/media/tempo.8ad504bdfbb686a33995.jpg",
     "index.html": "/tentativa-1-react/index.html",
-    "main.b710dd3d.css.map": "/tentativa-1-react/static/css/main.b710dd3d.css.map",
-    "main.de7c14fb.js.map": "/tentativa-1-react/static/js/main.de7c14fb.js.map",
+    "main.e51818eb.css.map": "/tentativa-1-react/static/css/main.e51818eb.css.map",
+    "main.4b736bdc.js.map": "/tentativa-1-react/static/js/main.4b736bdc.js.map",
     "453.60932868.chunk.js.map": "/tentativa-1-react/static/js/453.60932868.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b710dd3d.css",
-    "static/js/main.de7c14fb.js"
+    "static/css/main.e51818eb.css",
+    "static/js/main.4b736bdc.js"
   ]
 }
